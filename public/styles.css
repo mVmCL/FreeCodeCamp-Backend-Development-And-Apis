@@ -1,0 +1,30 @@
+#root{
+    display:grid;
+    align-items: center;
+    right:auto;
+    left:auto;
+    background-color: red;
+    height:50vh;
+    width:auto;
+    position: relative;
+
+
+}
+
+
+h1{
+    font-family:cursive;
+    font-weight:bold;
+    margin:20px;
+}
+
+h2{
+    font-family: cursive;
+    margin:20px;
+}
+
+li{
+    color:wheat;
+    font-size:20px;
+    font-weight: bold;
+}

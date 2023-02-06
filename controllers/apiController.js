@@ -1,6 +1,6 @@
 
       
-    const convertDateToUnixTime = async (req, res) => {
+const convertDateToUnixTime = async (req, res) => {
 console.log(req.params.date)
 let eitherOrParsed =parseInt(req.params.date)
 let inputDate = req.params.date
@@ -65,6 +65,7 @@ const unix = new Date(currentTime).getTime()
         utc: currentTime,
         unix:unix
     })
+
 }
 
 

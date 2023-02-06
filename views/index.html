@@ -5,6 +5,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Time freeze</title>
+
+<script>
+
+    const getUnixBtn = document.getElementById('unix-btn')
+    const date = document.getElementById('date').innerHTML
+date.addEventListener('change', (e) => {
+    e.preventDefault()
+
+    if(e.target.value){
+        console.log(e.target.value)
+    }
+})
+
+
+
+
+    console.log(date)
+</script>
 </head>
 <body>
 <div id="root">
@@ -12,8 +30,8 @@
 
 <input type="date" name="date" id="date" placeholder="pick a date" />
 
-<button type="button" id="callApi" onclick="routeToApiEndpoint()">Get Unix</button>
-
+<button type="button" onclick="logDate()"id="callApi" >Get Unix</button>
+<a href="/api">Current Time</a>
 
 
 
@@ -28,6 +46,21 @@
     }
 
     getDates()
+    function logDate(){
+        let dateInput = document.getElementById('date')
+        
+
+        if (!dateInput.value){
+            window.location.href = '/api/'
+            console.log("Date input:",dateInput)
+        }
+        
+        if(dateInput.value){
+            window.location.href = `/api/${dateInput.value}`
+            console.log("Taking ",dateInput.value, " with me to the endpoint" )
+        }
+        console.log(dateInput.value)
+     console.log("WUDDDDDUDDDUP")}
 </script>
 </body>
 </html>

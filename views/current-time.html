@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css"/>
+<title>Current Time</title>
+</head>
+<body>
+<div id="root">
+
+    <h1>YOO</h1>
+
+    <h2>Current Time</h2>
+<section id="current-time-wrapper">
+<ul>
+    <li id="utc">{{data}}</li>
+</ul>
+</section>
+</div>
+<script>
+    const currentTime = async(req, res) =>{
+        
+    
+    const currentDate = Date.now()
+    const currentTime = new Date(currentDate).toUTCString()
+    const unix = new Date(currentTime).getTime()
+      let data ={
+            utc: currentTime,
+            unix:unix
+        }
+    console.log(data)
+
+        let utcId = document.getElementById('utc')
+        utcId.innerHTML = JSON.stringify(data)
+        
+    }
+    
+    currentTime()
+    </script>
+<!-- <script src="../controllers/apiController" async>
+
+
+    
+</script> -->
+</body>
+</html>
