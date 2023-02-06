@@ -26,20 +26,20 @@ console.log(inputDate.length)
 
 
 if(isTimeStamp){
-res.send({
+res.json({
    unix:inputDate,
     string:final,
     isTimeStamp:isTimeStamp
 
 })
 } else if(!isTimeStamp) {
-    res.send({
+    res.json({
         unix:timeStamp,
         string:utc
     })
 }
 else{
-    res.send({
+    res.json({
         error: 'Invalid Date'
     })
 }
@@ -61,7 +61,7 @@ const currentTime = async(req, res) =>{
 const currentDate = Date.now()
 const currentTime = new Date(currentDate).toUTCString()
 const unix = new Date(currentTime).getTime()
-    res.send({
+    res.json({
         utc: currentTime,
         unix:unix
     })

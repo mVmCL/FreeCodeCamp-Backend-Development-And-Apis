@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>:date endpoint</title>
+
+<script>    //let inputDate = req.params.date
+
+    
+  const setListItem =async ()=> {
+
+    let dateIncoming = window.location.pathname.split('/').pop()
+        
+    let listItem = document.getElementById('date-values')
+    let utcListItem = document.getElementById('utc')
+let parsedDate = parseInt(dateIncoming)
+let timeStampToString = new Date(parsedDate)
+let unixString = new Date(timeStampToString)
+let final = unixString.toUTCString()
+        console.log('setListItem was ran')
+        console.log('date incoming:',dateIncoming)
+        if(listItem){
+     listItem.innerHTML = dateIncoming;}
+     if(utcListItem){
+        utcListItem.innerHTML = final}
+     }    
+    
+    
+    </script>
+</head>
+<body id="body" onload="setListItem()">
+<div id="root">
+
+
+
+<h1>Key values, GEEETCHUUR KEEEEEY VALUESSS</h1>
+<ul>
+
+    <li id="date-values" >
+        
+    </li>
+    <li id="utc">
+
+    </li>
+</ul>
+
+
+
+</div>
+
+    
+<script src="../controllers/apiController.js" type="javascript">
+   </script>
+
+
+
+</body>
+
+</html>

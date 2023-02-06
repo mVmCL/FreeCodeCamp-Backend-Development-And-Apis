@@ -9,14 +9,7 @@
 <script>
 
     const getUnixBtn = document.getElementById('unix-btn')
-    const date = document.getElementById('date').innerHTML
-date.addEventListener('change', (e) => {
-    e.preventDefault()
 
-    if(e.target.value){
-        console.log(e.target.value)
-    }
-})
 
 
 
@@ -41,13 +34,10 @@ date.addEventListener('change', (e) => {
 <script>
 
 
-    const getDates = () => {
-        fetch('../server').then(res => res.json()).then(data => { })
-    }
 
-    getDates()
     function logDate(){
         let dateInput = document.getElementById('date')
+
         
 
         if (!dateInput.value){
@@ -58,9 +48,7 @@ date.addEventListener('change', (e) => {
         if(dateInput.value){
             window.location.href = `/api/${dateInput.value}`
             console.log("Taking ",dateInput.value, " with me to the endpoint" )
-        }
-        console.log(dateInput.value)
-     console.log("WUDDDDDUDDDUP")}
+            }        }
 </script>
 </body>
 </html>

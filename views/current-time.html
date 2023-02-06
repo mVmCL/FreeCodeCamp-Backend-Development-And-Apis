@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="styles.css" type="text/css"/>
 <title>Current Time</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
     <h2>Current Time</h2>
 <section id="current-time-wrapper">
 <ul>
-    <li id="utc">{{data}}</li>
+    <li id="utc"></li>
 </ul>
 </section>
 </div>
@@ -33,7 +33,8 @@
     console.log(data)
 
         let utcId = document.getElementById('utc')
-        utcId.innerHTML = JSON.stringify(data)
+       if(utcId){
+            utcId.innerHTML = JSON.stringify(data)}
         
     }
     
